@@ -44,3 +44,31 @@ function generarReporteFiscal() {
 calcularIVA();
 aplicarRetenciones();
 generarReporteFiscal();
+
+console.log("SubTotal")
+
+// Funcionalidades del Integrante 2 - Tarea 5: Subtotal y Detalles
+
+function calcularSubtotal(productos) {
+    let subtotal = 0;
+    
+    console.log("[ISSUE 5] Ejecutando: Calculando subtotal de la factura...");
+    
+    // Recorremos los productos para sumar los precios
+    productos.forEach(item => {
+        console.log("-> Detalle: " + item.nombre + " | Cantidad: " + item.cantidad + " | Precio Unit: $" + item.precio);
+        subtotal += item.precio * item.cantidad;
+    });
+
+    console.log("-> Resultado: Subtotal calculado: $" + subtotal);
+    return subtotal;
+}
+
+// Funcionamiento (Ejemplo para probar)
+const carrito = [
+    { nombre: "Habitación Simple", cantidad: 1, precio: 5000 },
+    { nombre: "Servicio de Limpieza", cantidad: 1, precio: 1200 },
+    { nombre: "Desayuno", cantidad: 2, precio: 800 }
+];
+
+calcularSubtotal(carrito);
