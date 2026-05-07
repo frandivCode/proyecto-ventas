@@ -19,3 +19,5 @@ function reporteOcupacion() {
 altaHabitacion();
 cambiarDisponibilidad();
 reporteOcupacion();
+
+console.log("Cargando cabecera")
