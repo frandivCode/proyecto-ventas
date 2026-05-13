@@ -127,5 +127,25 @@ function cargarPieFactura(metodoPago, subtotal) {
 
     return totalFinal;
 }
+//validacion y cierre de factura
+
+function validarFactura(datosFactura) {
+    console.log("[ISSUE 9] Ejecutando: Verificando integridad de los datos...");
+
+    // Simulamos un chequeo de que nada esté vacío
+    const tieneCabecera = datosFactura.cabecera !== "";
+    const tieneProductos = datosFactura.items.length > 0;
+    const tieneTotalValido = datosFactura.total > 0;
+
+    if (tieneCabecera && tieneProductos && tieneTotalValido) {
+        console.log("-> Validación: [EXITOSA]");
+        console.log("-> Resultado: Factura verificada. Proceso de venta finalizado.");
+        return true;
+    } else {
+        console.log("-> Validación: [FALLIDA]");
+        console.log("-> Error: Faltan datos críticos en la factura.");
+        return false;
+    }
+}
 
 
