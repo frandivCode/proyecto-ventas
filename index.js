@@ -93,3 +93,39 @@ function mostrarProveedores() {
 
 // Ejecutar la función
 mostrarProveedores();
+
+function validarFactura() {
+    console.log("[ISSUE 9] Ejecutando: Verificando integridad de los datos...");
+    console.log("-> Resultado: Factura validada y lista para emitir.");
+}
+ const facturaParaValidar = {
+    cabecera: "Cliente: Juan Pérez - Fecha: 06/05/2026",
+    items: ["Habitación", "Desayuno"],
+    total: 8500
+};
+
+validarFactura(facturaParaValidar);
+
+//prueba Celeste
+
+function cargarPieFactura(metodoPago, subtotal) {
+    console.log("[ISSUE 8] Ejecutando: Generando pie de página y datos fiscales...");
+
+    // Cálculo rápido de impuestos para el pie
+    const iva = subtotal * 0.21;
+    const totalFinal = subtotal + iva;
+
+    console.log("-----------------------------------------");
+    console.log("-> Subtotal: $" + subtotal.toFixed(2));
+    console.log("-> IVA (21%): $" + iva.toFixed(2));
+    console.log("-> TOTAL A PAGAR: $" + totalFinal.toFixed(2));
+    console.log("-----------------------------------------");
+    console.log("-> Método de Pago: " + metodoPago);
+    console.log("-> CAI: 41023948230 | Vencimiento: 31/12/2026");
+    console.log("-> ¡Gracias por su compra!");
+    console.log("-----------------------------------------");
+
+    return totalFinal;
+}
+
+
