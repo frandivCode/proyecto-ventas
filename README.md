@@ -4,6 +4,7 @@
 - **Integrante 1:** Francisco Zapata
 - **Integrante 2:** Matias Menchaca
 - **Integrante 3:** Namir Velez
+- **Integrante 4:** Celeste Armonia
 
 ## Fecha
 06 de Mayo de 2026
@@ -16,7 +17,6 @@ Sistema en modo consola desarrollado en JavaScript para la gestión de ventas, c
 ## Tecnologías Utilizadas
 - **Lenguaje:** JavaScript
 - **Gestor de Paquetes:** Node.js
-- **Base de Datos (Opcional):** SQLite
 - **Control de Versiones:** Git / GitHub
 
 ## Funcionalidades Principales
