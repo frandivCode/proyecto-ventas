@@ -72,3 +72,31 @@ const carrito = [
 ];
 
 calcularSubtotal(carrito);
+
+// --- DATOS DE ENTRADA ---
+const HABITACIONES = 50;
+const DIAS_MES = 30;
+const OCUPACION = 0.60; // 60%
+const ADR = 125000;
+const OTROS_INGRESOS = 16800000;
+const GASTOS_TOTALES = 85000000; // Fijos + Variables aproximados
+
+// --- CÁLCULOS ---
+const ingresosAlojamiento = (HABITACIONES * DIAS_MES * OCUPACION) * ADR;
+const ingresosBrutos = ingresosAlojamiento + OTROS_INGRESOS;
+const utilidad = ingresosBrutos - GASTOS_TOTALES;
+const margen = (utilidad / ingresosBrutos) * 100;
+
+// --- RESULTADOS ---
+console.log("=== RESUMEN DE OPERACIONES MAYO 2026 ===");
+console.log(`Ingresos Totales: $${ingresosBrutos.toLocaleString()}`);
+console.log(`Utilidad Neta:    $${utilidad.toLocaleString()}`);
+console.log(`Margen:           ${margen.toFixed(2)}%`);
+console.log("========================================");
+
+// Validación rápida
+if (margen >= 25) {
+    console.log("✅ Objetivo de rentabilidad alcanzado.");
+} else {
+    console.log("⚠️ Revisar costos: Margen por debajo del 25%.");
+}
