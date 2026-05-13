@@ -72,3 +72,23 @@ const carrito = [
 ];
 
 calcularSubtotal(carrito);
+
+// 1. Datos básicos del reporte
+const categorias = ["Amenities", "Alimentos", "Textiles", "Servicios"];
+const gastos = [1545000, 3670000, 1380000, 705000];
+let total = 0;
+
+console.log("=== REPORTE DE COMPRAS MENSUALES ===");
+console.log("------------------------------------");
+
+// 2. Ciclo para mostrar los datos y sumar el total
+for (let i = 0; i < categorias.length; i++) {
+    // .toLocaleString('es-AR') aplica el formato de miles con punto
+    console.log(`${categorias[i]}: $${gastos[i].toLocaleString('es-AR')}`);
+    total += gastos[i];
+}
+
+// 3. Resultado final
+console.log("------------------------------------");
+console.log(`GASTO TOTAL DEL MES: $${total.toLocaleString('es-AR')}`);
+console.log("====================================");
