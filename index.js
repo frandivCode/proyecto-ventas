@@ -72,3 +72,24 @@ const carrito = [
 ];
 
 calcularSubtotal(carrito);
+
+// Lista de proveedores del hotel
+const proveedores = [
+    { rubro: "Textiles", empresa: "Mimatex", producto: "Sábanas y Toallas" },
+    { rubro: "Amenidades", empresa: "Naturae", producto: "Jabones Biodegradables" },
+    { rubro: "Alimentos", empresa: "GastroGlobal", producto: "Café y Panadería" },
+    { rubro: "Software", empresa: "CloudStay", producto: "Sistema PMS" },
+    { rubro: "Mantenimiento", empresa: "TermoControl", producto: "Aire Acondicionado" }
+];
+
+// Función simple para mostrar qué hace cada uno
+function mostrarProveedores() {
+    console.log("--- LISTA DE PROVEEDORES ACTIVOS ---");
+    
+    proveedores.forEach(p => {
+        console.log(`El rubro de ${p.rubro} lo cubre ${p.empresa}, entregando: ${p.producto}.`);
+    });
+}
+
+// Ejecutar la función
+mostrarProveedores();
