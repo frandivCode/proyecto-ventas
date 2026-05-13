@@ -147,5 +147,34 @@ function validarFactura(datosFactura) {
         return false;
     }
 }
+//calculo del total final y descuentos
 
+function aplicarDescuentos(subtotal, tipoCupon) {
+    console.log("[ISSUE 7] Ejecutando: Procesando descuentos disponibles...");
+    
+    let descuento = 0;
+    let porcentaje = 0;
+
+    // Lógica de cupones
+    if (tipoCupon === "PROMO10") {
+        porcentaje = 0.10; // 10% de descuento
+    } else if (tipoCupon === "BIENVENIDA") {
+        porcentaje = 0.15; // 15% de descuento
+    } else {
+        porcentaje = 0;
+        console.log("-> Aviso: No se aplicaron cupones válidos.");
+    }
+
+    descuento = subtotal * porcentaje;
+    const subtotalConDescuento = subtotal - descuento;
+
+    if (descuento > 0) {
+        console.log("-> Cupón aplicado: " + tipoCupon);
+        console.log("-> Monto ahorrado: -$" + descuento.toFixed(2));
+    }
+    
+    console.log("-> Resultado: Subtotal con descuento: $" + subtotalConDescuento.toFixed(2));
+    
+    return subtotalConDescuento;
+}
 
